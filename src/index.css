@@ -6,7 +6,8 @@
   box-sizing: border-box;
 }
 
-img {
+img,
+svg {
   max-inline-size: 100%;
   display: block;
 }
@@ -22,6 +23,14 @@ img {
   --font-base: "Kumbh Sans", "sans-serif";
   --orange-500: hsl(26, 100%, 55%);
   --orange-300: hsl(26, 100%, 71%);
+  --white: hsl(0, 100%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --grey-50: hsl(223, 64%, 98%);
+  --grey-100: hsl(219, 35%, 92%);
+  --grey-300: hsl(221, 22%, 81%);
+  --grey-500: hsl(219, 9%, 45%);
+  --grey-500: hsl(219, 9%, 45%);
+  --grey-950: hsl(220, 13%, 13%);
   --shadow-orange-300: 0px 20px 50px 0px rgba(255, 126, 27, 0.25);
 }
 
@@ -31,4 +40,5 @@ body {
   font-weight: normal;
   font-size: 1rem;
   line-height: 1.625;
+  color: var(--black);
 }
