@@ -29,7 +29,6 @@ svg {
   --grey-100: hsl(219, 35%, 92%);
   --grey-300: hsl(221, 22%, 81%);
   --grey-500: hsl(219, 9%, 45%);
-  --grey-500: hsl(219, 9%, 45%);
   --grey-950: hsl(220, 13%, 13%);
   --shadow-orange-300: 0px 20px 50px 0px rgba(255, 126, 27, 0.25);
 }
@@ -42,3 +41,4 @@ body {
   line-height: 1.625;
   color: var(--black);
 }
+
