@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import Button from "./index";
-import ShoppingCart from "./icons/ShoppingCart";
+import Button from ".";
+import ShoppingCart from "../icons/ShoppingCart";
 
 const meta = {
   component: Button,
@@ -12,7 +12,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
-  args: {},
+  args: {
+    children: <>Checkout</>,
+  },
 };
 export const Cart: Story = {
   args: {

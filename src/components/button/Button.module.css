@@ -1,10 +1,10 @@
 .button {
   background-color: var(--orange-500);
-  box-shadow: 0px 20px 50px 0px rgba(255, 126, 27, 0.25);
+  box-shadow: var(--shadow-orange-300);
   border: none;
-  border-radius: 10px;
-  padding-block: 16px;
-  padding-inline: 72px;
+  border-radius: 0.625rem;
+  padding-block: 1rem;
+  padding-inline: 4.5rem;
   font-weight: bold;
   font-size: inherit;
   font-family: inherit;
