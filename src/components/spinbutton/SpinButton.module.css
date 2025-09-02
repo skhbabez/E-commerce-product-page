@@ -1,0 +1,27 @@
+.spinbutton {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  font-weight: bold;
+  background-color: var(--grey-50);
+  inline-size: fit-content;
+  padding: 1rem 0.84375rem;
+  min-width: 9.8125rem;
+
+  border-radius: 0.625rem;
+  & output {
+    outline: none;
+  }
+  &:focus-within {
+    outline: 1px solid var(--orange-300);
+  }
+
+  & button {
+    border: none;
+    background-color: inherit;
+  }
+  & svg {
+    inline-size: 0.75rem;
+    color: var(--orange-300);
+  }
+}

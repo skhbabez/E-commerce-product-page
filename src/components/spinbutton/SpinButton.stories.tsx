@@ -14,6 +14,9 @@ type Story = StoryObj<typeof meta>;
 export const Normal: Story = {
   args: {
     value: 0,
+    min: 0,
+    max: 10,
+    labelledBy: "1",
     onClick: () => {},
   },
   render: function Render(args) {
@@ -22,6 +25,6 @@ export const Normal: Story = {
     const onClick = (newValue: number) => {
       updateArgs({ value: newValue });
     };
-    return <SpinButton value={value} onClick={onClick}></SpinButton>;
+    return <SpinButton {...args} value={value} onClick={onClick}></SpinButton>;
   },
 };
