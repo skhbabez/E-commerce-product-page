@@ -1,0 +1,33 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-inline-size: 100%;
+  display: block;
+}
+
+@font-face {
+  font-family: "Kumbh Sans";
+  font-style: normal;
+  src: local("Kumbh Sans"),
+    url("fonts/KumbhSans-VariableFont_YOPQ,wght.ttf") format("truetype");
+}
+
+:root {
+  --font-base: "Kumbh Sans", "sans-serif";
+  --orange-500: hsl(26, 100%, 55%);
+  --orange-300: hsl(26, 100%, 71%);
+}
+
+body {
+  font-family: var(--font-base);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.625;
+}
