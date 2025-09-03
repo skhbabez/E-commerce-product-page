@@ -9,6 +9,7 @@
   font-size: inherit;
   font-family: inherit;
   line-height: inherit;
+  color: var(--grey-950);
   transition: background-color 100ms ease-out;
   display: flex;
   align-items: center;

@@ -23,10 +23,10 @@
 .discountedprice {
   font-size: 1.75rem;
   line-height: 2rem;
+  color: var(--grey-950);
 }
 
 .price {
-  color: var(--grey-500);
   justify-self: end;
   @media (width > 768px) {
     justify-self: start;
