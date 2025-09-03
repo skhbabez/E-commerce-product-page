@@ -23,6 +23,8 @@
   }
   & > ul {
     display: flex;
+    gap: 0.25rem;
+    flex-direction: column;
   }
   & > :is(ul, button) {
     margin-inline: 25.5px;

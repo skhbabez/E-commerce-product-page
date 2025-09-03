@@ -23,7 +23,7 @@ export const Empty: Story = {
     },
   ],
 };
-export const Full: Story = {
+export const One: Story = {
   args: {},
   decorators: [
     (Story) => {
@@ -36,6 +36,35 @@ export const Full: Story = {
               name: "Fall Limited Edition Sneakers",
               price: 125,
               image: "images/image-product-1-thumbnail.jpg",
+            },
+          ]}
+        >
+          <Story></Story>
+        </CartCtxProvider>
+      );
+    },
+  ],
+};
+export const Two: Story = {
+  args: {},
+  decorators: [
+    (Story) => {
+      return (
+        <CartCtxProvider
+          initialValue={[
+            {
+              id: 1,
+              quantity: 3,
+              name: "Fall Limited Edition Sneakers",
+              price: 125,
+              image: "images/image-product-1-thumbnail.jpg",
+            },
+            {
+              id: 2,
+              quantity: 2,
+              name: "Summer Limited Edition Sneakers",
+              price: 150,
+              image: "images/image-product-2-thumbnail.jpg",
             },
           ]}
         >
