@@ -15,6 +15,7 @@ export const Normal: Story = {
     id: 1,
     imageUrl: "public/images/image-product-1-thumbnail.jpg",
     imageAlt: "Sneakers",
+    productName: "Fall Limited Edition Sneakers",
     price: 125,
     quantity: 3,
     onDelete: (id) => {},

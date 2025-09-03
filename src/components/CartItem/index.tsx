@@ -6,6 +6,7 @@ interface CartItemProps {
   imageUrl: string;
   imageAlt: string;
   price: number;
+  productName: string;
   quantity: number;
   onDelete: (id: number) => void;
 }
@@ -15,6 +16,7 @@ const CartItem = ({
   imageUrl,
   imageAlt,
   price,
+  productName,
   quantity,
   onDelete,
 }: CartItemProps) => {
@@ -22,7 +24,7 @@ const CartItem = ({
     <div className={styles.cartitem}>
       <img className={styles.productimage} src={imageUrl} alt={imageAlt} />
       <div>
-        <p>Fall Limited Edition Sneakers</p>
+        <p>{productName}</p>
         <div className={styles.prices}>
           <span>
             ${price.toFixed(2)} x {quantity}
