@@ -11,6 +11,7 @@ import type { User } from "../types/user";
 // https://stackoverflow.com/questions/41030361/how-to-update-react-context-from-inside-a-child-component
 
 const userDefault = {
+  id: 1,
   avatar: "public/images/image-avatar.png",
 };
 
@@ -27,9 +28,7 @@ const UserCtx = createContext<UserCtxType>({
 });
 
 const UserCtxProvider = ({ children }: PropsWithChildren) => {
-  const [user, setUser] = useState<User>({
-    avatar: "public/images/image-avatar.png",
-  });
+  const [user, setUser] = useState<User>(userDefault);
   const value = useMemo(
     () => ({
       user,
