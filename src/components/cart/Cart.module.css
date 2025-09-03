@@ -1,8 +1,7 @@
 .cart {
   padding-block: 1.5rem;
   background-color: var(--white);
-  border-radius: 10px;
-  max-inline-size: 360px;
+  inline-size: 360px;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -18,7 +17,6 @@
   & > h2 {
     margin-inline: 12px;
     font-weight: bold;
-
     color: var(--grey-950);
   }
   & > ul {
@@ -36,5 +34,25 @@
     justify-self: center;
     align-self: center;
     font-weight: bold;
+  }
+}
+
+.popover {
+  border-radius: 10px;
+  margin: 0;
+  inset: auto;
+  bottom: calc(anchor(top) + 20px);
+  justify-self: anchor-center;
+}
+
+.shopbutton {
+  border: none;
+  background-color: transparent;
+  & svg {
+    transition: color 150ms ease-out;
+    block-size: 20px;
+  }
+  & svg:hover {
+    color: var(--orange-300);
   }
 }

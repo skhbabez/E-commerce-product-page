@@ -12,7 +12,6 @@
 
 .productimage {
   border-radius: 0.25rem;
-
   inline-size: 3.125rem;
   block-size: 3.125rem;
   object-fit: cover;
@@ -22,9 +21,11 @@
   display: flex;
   gap: 1rem;
   align-items: center;
-  justify-content: start;
+  justify-content: left;
+
   & button {
     flex-shrink: 0;
+    margin-inline-start: auto;
   }
 }
 

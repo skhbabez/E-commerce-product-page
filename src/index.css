@@ -17,6 +17,13 @@ ol {
   list-style: none;
 }
 
+body :popover-open {
+  border: none;
+  /* outline: none; */
+  inline-size: max-content;
+  overflow: visible;
+}
+
 @font-face {
   font-family: "Kumbh Sans";
   font-style: normal;
