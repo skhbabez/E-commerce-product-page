@@ -14,11 +14,12 @@
   }
 
   @media (min-width: 1024px) {
-    padding-inline: 0.5rem;
+    padding-inline: calc(0.5rem + 0.34375rem);
   }
 
   & output {
     outline: none;
+    user-select: none;
   }
   &:focus-within {
     outline: 1px solid var(--orange-300);
