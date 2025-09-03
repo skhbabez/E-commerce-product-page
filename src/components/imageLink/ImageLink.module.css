@@ -1,0 +1,18 @@
+.imagelink {
+  &:has(:hover, :focus-visible, :focus) img {
+    outline: 0.125rem solid var(--orange-500);
+    outline-offset: -0.125rem;
+  }
+  img {
+    transition: all 100ms ease-out;
+    inline-size: clamp(
+      1.5rem,
+      -0.0506rem + 6.6158vw,
+      3.125rem
+    ); /* maybe not control size directly but through parent?*/
+
+    @container (min-width: 375px) {
+      inline-size: clamp(1.5rem, -0.0506rem + 6.6158cqi, 3.125rem);
+    }
+  }
+}

@@ -1,11 +1,3 @@
 .avatar {
   border-radius: 50%;
-  inline-size: clamp(
-    1.5rem,
-    -0.0506rem + 6.6158vw,
-    3.125rem
-  ); /* maybe not control size directly but through parent?*/
-  @container (min-width: 375px) {
-    inline-size: clamp(1.5rem, -0.0506rem + 6.6158cqi, 3.125rem);
-  }
 }
