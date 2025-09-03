@@ -12,6 +12,11 @@ svg {
   display: block;
 }
 
+ul,
+ol {
+  list-style: none;
+}
+
 @font-face {
   font-family: "Kumbh Sans";
   font-style: normal;
@@ -30,7 +35,9 @@ svg {
   --grey-300: hsl(221, 22%, 81%);
   --grey-500: hsl(219, 9%, 45%);
   --grey-950: hsl(220, 13%, 13%);
+
   --shadow-orange-300: 0px 20px 50px 0px rgba(255, 126, 27, 0.25);
+  --shadow-grey-950: 0px 20px 50px 0px rgba(220, 13%, 13%, 0.1);
 }
 
 body {

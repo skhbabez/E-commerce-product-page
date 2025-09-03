@@ -13,6 +13,7 @@
   transition: background-color 100ms ease-out;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   & svg {
     block-size: 1rem;

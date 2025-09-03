@@ -1,0 +1,30 @@
+.cart {
+  padding-block: 1.5rem;
+  background-color: var(--white);
+  border-radius: 10px;
+  max-inline-size: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-grey-950);
+
+  &::before {
+    content: "";
+    display: block;
+    order: 1;
+    border-top: 1px solid var(--grey-100);
+  }
+  & > h2 {
+    margin-inline: 12px;
+    font-weight: bold;
+
+    color: var(--grey-950);
+  }
+  & > ul {
+    display: flex;
+  }
+  & > :is(ul, button) {
+    margin-inline: 25.5px;
+    order: 2;
+  }
+}
