@@ -13,11 +13,10 @@ type Story = StoryObj<typeof meta>;
 export const Normal: Story = {
   args: {
     id: 1,
-    imageUrl: "public/images/image-product-1-thumbnail.jpg",
-    imageAlt: "Sneakers",
-    productName: "Fall Limited Edition Sneakers",
+    image: "public/images/image-product-1-thumbnail.jpg",
+    name: "Fall Limited Edition Sneakers",
     price: 125,
     quantity: 3,
-    onDelete: (id) => {},
+    onDelete: () => {},
   },
 };

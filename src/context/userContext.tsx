@@ -4,7 +4,7 @@ import {
   useState,
   type PropsWithChildren,
 } from "react";
-import type { User } from "../types/user";
+import type { User } from "../types";
 
 // https://stackoverflow.com/questions/73526249/how-to-fix-the-object-passed-as-the-value-prop-to-the-context-provider-changes
 // https://react.dev/reference/react/createContext

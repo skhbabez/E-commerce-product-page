@@ -3,28 +3,26 @@ import styles from "./CartItem.module.css";
 
 interface CartItemProps {
   id: number;
-  imageUrl: string;
-  imageAlt: string;
+  image: string;
   price: number;
-  productName: string;
+  name: string;
   quantity: number;
   onDelete: (id: number) => void;
 }
 
 const CartItem = ({
   id,
-  imageUrl,
-  imageAlt,
+  image,
   price,
-  productName,
+  name,
   quantity,
   onDelete,
 }: CartItemProps) => {
   return (
     <div className={styles.cartitem}>
-      <img className={styles.productimage} src={imageUrl} alt={imageAlt} />
+      <img className={styles.productimage} src={image} alt="" />
       <div>
-        <p>{productName}</p>
+        <p>{name}</p>
         <div className={styles.prices}>
           <span>
             ${price.toFixed(2)} x {quantity}

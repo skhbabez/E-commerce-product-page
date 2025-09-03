@@ -7,6 +7,7 @@
   flex-direction: column;
   gap: 1.5rem;
   box-shadow: var(--shadow-grey-950);
+  min-block-size: 16rem;
 
   &::before {
     content: "";
@@ -26,5 +27,12 @@
   & > :is(ul, button) {
     margin-inline: 25.5px;
     order: 2;
+  }
+  & .emptymessage {
+    order: 2;
+    margin-block-start: 3rem;
+    justify-self: center;
+    align-self: center;
+    font-weight: bold;
   }
 }
