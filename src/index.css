@@ -17,6 +17,11 @@ ol {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 body :popover-open {
   border: none;
   /* outline: none; */

@@ -1,38 +1,33 @@
-import { useContext, useId } from "react";
 import Button from "../button";
 import styles from "./Cart.module.css";
-import { CartCtx } from "../../context/cartContext";
-import CartItem from "../CartItem";
-import ShoppingCart from "../icons/ShoppingCart";
 
-const Cart = () => {
-  const { cart, removeItem } = useContext(CartCtx);
-  const id = useId();
+import CartItem from "../CartItem";
+import type { CartItem as Item } from "../../types";
+
+interface CartProps {
+  cart: Item[];
+  onDelete: (id: number) => void;
+}
+
+const Cart = ({ cart, onDelete }: CartProps) => {
   return (
-    <>
-      <button className={styles.shopbutton}  popoverTarget={id}>
-        <ShoppingCart />
-      </button>
-      <div className={styles.popover} popover="auto" id={id}>
-        <div className={styles.cart}>
-          <h2>Cart</h2>
-          {cart.length > 0 ? (
-            <>
-              <ul>
-                {cart.map((item) => (
-                  <li key={item.id}>
-                    <CartItem {...item} onDelete={removeItem} />
-                  </li>
-                ))}
-              </ul>
-              <Button>Checkout</Button>
-            </>
-          ) : (
-            <p className={styles.emptymessage}>Your cart is empty.</p>
-          )}
-        </div>
-      </div>
-    </>
+    <div className={styles.cart}>
+      <h2>Cart</h2>
+      {cart.length > 0 ? (
+        <>
+          <ul>
+            {cart.map((item) => (
+              <li key={item.id}>
+                <CartItem {...item} onDelete={onDelete} />
+              </li>
+            ))}
+          </ul>
+          <Button>Checkout</Button>
+        </>
+      ) : (
+        <p className={styles.emptymessage}>Your cart is empty.</p>
+      )}
+    </div>
   );
 };
 export default Cart;
