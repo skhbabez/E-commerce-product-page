@@ -6,6 +6,7 @@ import SpinButton from "../../components/spinbutton";
 import type { Product } from "../../types";
 import styles from "./ProductPage.module.css";
 import { CartCtx } from "../../context/cartContext";
+import PictureGallery from "../../components/pictureGallery";
 
 interface ProductPageProps {
   product: Product;
@@ -26,7 +27,7 @@ const ProductPage = ({ product }: ProductPageProps) => {
   };
   return (
     <article>
-      <div>image gallery</div>
+      <PictureGallery images={product.images} />
       <form noValidate>
         <hgroup>
           <p>{product.brand}</p>
@@ -39,7 +40,7 @@ const ProductPage = ({ product }: ProductPageProps) => {
           price={product.price}
           discount={product.discount}
         ></PriceLabel>
-        <Button onClick={updateCart}>
+        <Button type="button" onClick={updateCart}>
           <ShoppingCart></ShoppingCart> Add to cart
         </Button>
         <p id={id} className="sr-only">

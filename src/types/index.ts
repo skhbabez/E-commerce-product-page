@@ -18,7 +18,14 @@ interface Product {
   discount: number;
   price: number;
   brand: string;
-  images: { image: string; thumbnail: string }[];
+  images: Image[];
 }
 
-export type { User, CartItem, Product };
+interface Image {
+  id: number;
+  image: string;
+  thumbnail: string;
+  alt: string;
+}
+
+export type { User, CartItem, Product, Image };
