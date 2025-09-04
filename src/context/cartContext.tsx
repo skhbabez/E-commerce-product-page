@@ -8,7 +8,7 @@ import type { CartItem } from "../types";
 
 interface CartCtxType {
   cart: CartItem[];
-  setItem: (cartItem: CartItem) => void;
+  addItem: (cartItem: CartItem) => void;
   removeItem: (id: number) => void;
 }
 
@@ -16,7 +16,7 @@ const defaultCart: CartItem[] = [];
 
 const CartCtx = createContext<CartCtxType>({
   cart: defaultCart,
-  setItem: () => {},
+  addItem: () => {},
   removeItem: () => {},
 });
 
@@ -28,22 +28,31 @@ const CartCtxProvider = ({
 
   //add localstorage. Maybe external syncstore?
 
-  const setItem = (cartItem: CartItem) => {
-    const newCart = [
-      ...cart.filter((item) => cartItem.id !== item.id),
-      cartItem,
-    ];
-    setCart(newCart);
+  const addItem = (cartItem: CartItem) => {
+    setCart((oldCart) => {
+      const oldIndex = oldCart.findIndex((item) => cartItem.id === item.id);
+      const oldQuantity = oldCart[oldIndex]?.quantity || 0;
+      const newCartItem = {
+        ...cartItem,
+        quantity: cartItem.quantity + oldQuantity,
+      };
+      const newCart = [...oldCart];
+      if (oldIndex >= 0) {
+        newCart[oldIndex] = newCartItem;
+      } else {
+        newCart.push(newCartItem);
+      }
+      return newCart;
+    });
   };
 
   const removeItem = (id: number) => {
-    const newCart = cart.filter((item) => id !== item.id);
-    setCart(newCart);
+    setCart((oldCart) => oldCart.filter((item) => id !== item.id));
   };
   const value = useMemo(
     () => ({
       cart,
-      setItem,
+      addItem,
       removeItem,
     }),
     [cart, setCart]
