@@ -14,8 +14,9 @@
     z-index: 1;
     top: 0;
     right: 0;
-    display: grid;
-    place-items: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     line-height: 0;
     block-size: 0.8125rem;
     inline-size: 1.1875rem;
