@@ -7,14 +7,14 @@ interface PictureGalleryProps {
 }
 
 const PictureGallery = ({ images }: PictureGalleryProps) => {
-  const [currentImageId, setCurrentImage] = useState<number | null>(
+  const [currentImageId, setCurrentImageId] = useState<number | null>(
     images[0]?.id || null
   );
   const getImage = (id: number | null) => {
     return images.find((image) => image.id === id);
   };
   const handleChange = (id: number) => {
-    setCurrentImage(getImage(id)?.id || null);
+    setCurrentImageId(getImage(id)?.id || null);
   };
   const currentImage = getImage(currentImageId);
   if (!currentImage) {
