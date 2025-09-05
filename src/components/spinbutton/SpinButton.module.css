@@ -1,10 +1,9 @@
 .spinbutton {
-  display: flex;
+  display: inline-flex;
   align-items: stretch;
   justify-content: space-between;
   font-weight: bold;
   background-color: var(--grey-50);
-  inline-size: fit-content;
   padding: 1rem 1rem;
   min-width: 9.8125rem;
   border-radius: 0.625rem;

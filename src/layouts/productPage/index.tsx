@@ -26,33 +26,33 @@ const ProductPage = ({ product }: ProductPageProps) => {
     });
   };
   return (
-    <article>
+    <article className={styles.productpage}>
       <PictureGallery images={product.images} />
       <form noValidate>
-        <hgroup>
+        <hgroup className={styles.producttitle}>
           <p>{product.brand}</p>
           <h1>{product.name}</h1>
         </hgroup>
 
-        <p>{product.description}</p>
+        <p className={styles.productdescription}>{product.description}</p>
 
         <PriceLabel
+          className={styles.pricelabel}
           price={product.price}
           discount={product.discount}
         ></PriceLabel>
-        <Button type="button" onClick={updateCart}>
-          <ShoppingCart></ShoppingCart> Add to cart
-        </Button>
-        <p id={id} className="sr-only">
-          Quantity
-        </p>
-        <SpinButton
-          value={quantity}
-          min={1}
-          max={10}
-          labelledBy={id}
-          onClick={setQuantity}
-        ></SpinButton>
+        <div className={styles.controls}>
+          <SpinButton
+            value={quantity}
+            min={1}
+            max={10}
+            label={"       Quantity"}
+            onClick={setQuantity}
+          ></SpinButton>
+          <Button type="button" onClick={updateCart}>
+            <ShoppingCart></ShoppingCart> Add to cart
+          </Button>
+        </div>
       </form>
     </article>
   );
