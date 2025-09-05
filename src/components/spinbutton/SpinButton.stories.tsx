@@ -16,7 +16,7 @@ export const Normal: Story = {
     value: 0,
     min: 0,
     max: 10,
-    labelledBy: "1",
+    label: "quantity",
     onClick: () => {},
   },
   render: function Render(args) {

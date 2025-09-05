@@ -1,0 +1,40 @@
+.cart {
+  padding-block: 1.5rem;
+  background-color: var(--white);
+  inline-size: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-grey-950);
+  min-block-size: 16rem;
+
+  &::before {
+    content: "";
+    display: block;
+    order: 1;
+    border-top: 1px solid var(--grey-100);
+  }
+  & > h2 {
+    margin-inline: 12px;
+    font-weight: bold;
+    color: var(--grey-950);
+  }
+  & > ul {
+    display: flex;
+    gap: 0.25rem;
+    flex-direction: column;
+  }
+  & > :is(ul, button) {
+    margin-inline: 25.5px;
+    order: 2;
+  }
+  & .emptymessage {
+    order: 2;
+    margin-block-start: 3rem;
+    justify-self: center;
+    align-self: center;
+    font-weight: bold;
+  }
+}
+
+

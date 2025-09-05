@@ -1,0 +1,39 @@
+.deletebutton {
+  background-color: transparent;
+  border: none;
+  color: var(--grey-300);
+  & svg {
+    inline-size: 0.875rem;
+  }
+  &:is(:hover, :focus-visible) {
+    color: var(--black);
+  }
+}
+
+.productimage {
+  border-radius: 0.25rem;
+  inline-size: 3.125rem;
+  block-size: 3.125rem;
+  object-fit: cover;
+}
+
+.cartitem {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: left;
+
+  & button {
+    flex-shrink: 0;
+    margin-inline-start: auto;
+  }
+}
+
+.prices {
+  & em {
+    margin-inline-start: 0.5rem;
+    color: var(--grey-950);
+    font-weight: bold;
+    font-style: normal;
+  }
+}

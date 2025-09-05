@@ -1,0 +1,90 @@
+.popover {
+  border-radius: 10px;
+  inline-size: 100px;
+  top: 100px;
+  right: 10px;
+  position: fixed;
+}
+
+.shopbutton {
+  border: none;
+  background-color: transparent;
+  & svg {
+    transition: color 150ms ease-out;
+  }
+  & svg:hover {
+    color: var(--orange-300);
+  }
+}
+.header {
+  border-block-end: 1px solid var(--grey-100);
+  block-size: 83px;
+  inline-size: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  & .headercontent {
+    inline-size: 100%;
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+  }
+}
+
+.usersection {
+  display: flex;
+  gap: clamp(1.5rem, 0.0687rem + 6.1069vw, 3rem);
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  & .mainnavigation {
+    font-size: 0.9375rem;
+    display: flex;
+    gap: 2rem;
+
+    & a.selected,
+    a:hover {
+      display: block;
+      position: relative;
+      color: var(--grey-950);
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -47px;
+        background-color: var(--orange-500);
+        height: 4px;
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+}
+
+.avatarlink {
+  &:has(:hover, :focus-visible, :focus) img {
+    outline: 0.125rem solid var(--orange-500);
+    outline-offset: -0.125rem;
+  }
+  img {
+    border-radius: 50%;
+    inline-size: clamp(
+      1.5rem,
+      -0.0506rem + 6.6158vw,
+      3.125rem
+    ); /* maybe not control size directly but through parent?*/
+
+    @container (min-width: 375px) {
+      inline-size: clamp(1.5rem, -0.0506rem + 6.6158cqi, 3.125rem);
+    }
+  }
+}
+
+.logo {
+  inline-size: 8.59375rem;
+  block-size: 1.25rem;
+}

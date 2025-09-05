@@ -3,20 +3,14 @@ import styles from "./SpinButton.module.css";
 import Minus from "../icons/Minus";
 import Plus from "../icons/Plus";
 interface SpinButtonProps {
-  labelledBy: string;
+  label?: string;
   value: number;
   min: number;
   max: number;
   onClick: (newValue: number) => void;
 }
 
-const SpinButton = ({
-  value,
-  min,
-  max,
-  labelledBy,
-  onClick,
-}: SpinButtonProps) => {
+const SpinButton = ({ value, min, max, label, onClick }: SpinButtonProps) => {
   const id = useId();
   const outputRef = useRef<HTMLOutputElement>(null);
   const normalizeValue = (newValue: number) => {
@@ -66,7 +60,7 @@ const SpinButton = ({
         aria-valuemax={max}
         aria-valuenow={normalizeValue(value)}
         aria-valuetext={String(normalizeValue(value))}
-        aria-labelledby={labelledBy}
+        aria-label={label}
         id={id}
         onKeyDown={onKeyDownHandler}
       >
