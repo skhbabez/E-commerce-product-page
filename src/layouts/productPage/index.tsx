@@ -13,16 +13,15 @@ interface ProductPageProps {
 }
 
 const ProductPage = ({ product }: ProductPageProps) => {
-  const { cart, addItem } = useContext(CartCtx);
+  const { addItem } = useContext(CartCtx);
   const [quantity, setQuantity] = useState(1);
-  const id = useId();
   const updateCart = () => {
     addItem({
       id: product.id,
       name: product.name,
       quantity: quantity,
       price: product.price,
-      image: "",
+      image: product.images[0]?.thumbnail,
     });
   };
   return (

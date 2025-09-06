@@ -1,0 +1,102 @@
+.currentimage {
+  position: relative;
+
+  & > img {
+    object-fit: cover;
+    inline-size: 100%;
+    block-size: 100%;
+  }
+  & > button {
+    display: block;
+    background-color: transparent;
+    border: none;
+  }
+}
+
+.navigation {
+  position: absolute;
+  inline-size: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.embeddedgallery {
+  & > * + * {
+    margin-block-start: 2rem;
+  }
+  @media (min-width: 1024px) {
+    max-inline-size: 448px;
+  }
+  inline-size: 100%;
+}
+
+.embeddedgallery .currentimage {
+  block-size: 300px;
+  overflow: hidden;
+  @media (min-width: 608px) {
+    border-radius: 0.9375rem;
+  }
+  @media (min-width: 1024px) {
+    block-size: 445px;
+  }
+}
+
+.embeddedgallery .navigation {
+  @media (min-width: 1024px) {
+    display: none;
+  }
+  padding-inline: 1rem;
+}
+
+.lightboxgallery .currentimage {
+  inline-size: 550px;
+  margin-block-start: 1.5rem;
+  margin-block-end: 40px;
+  & img {
+    border-radius: 0.9375rem;
+  }
+}
+
+.lightboxgallery .navigation {
+  inline-size: 606px;
+  left: -28px;
+
+  & button {
+    inline-size: 3.5rem;
+  }
+}
+
+.lightboxgallery .thumbnailwrapper {
+  padding-inline: 51px;
+}
+
+.lightboxdialog {
+  @media (max-width: 1024px) {
+    display: none;
+  }
+  border: none;
+  margin: auto;
+  background-color: transparent;
+  overflow: initial;
+  &::backdrop {
+    background-color: var(--black);
+    opacity: 75%;
+  }
+}
+
+.closebutton {
+  display: block;
+  background-color: transparent;
+  border: none;
+  color: var(--white);
+  margin-inline-start: auto;
+  :hover {
+    color: var(--orange-500);
+  }
+  & svg {
+    block-size: 20px;
+    inline-size: 20px;
+  }
+}
