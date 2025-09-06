@@ -1,9 +1,15 @@
 .popover {
-  border-radius: 10px;
-  inline-size: 100px;
-  top: 100px;
-  right: 10px;
+  background-color: transparent;
+  border: none;
   position: fixed;
+  left: 63.26%;
+  top: 94px;
+  box-shadow: var(--shadow-grey-950);
+  @supports (bottom: anchor(bottom)) {
+    top: anchor(bottom);
+    left: anchor(center);
+    translate: -50% 0;
+  }
 }
 
 .shopbutton {

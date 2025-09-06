@@ -26,13 +26,6 @@ fieldset {
   border: none;
 }
 
-body :popover-open {
-  border: none;
-  /* outline: none; */
-  inline-size: max-content;
-  overflow: visible;
-}
-
 @font-face {
   font-family: "Kumbh Sans";
   font-style: normal;
@@ -51,8 +44,8 @@ body :popover-open {
   --grey-300: hsl(221, 22%, 81%);
   --grey-500: hsl(219, 9%, 45%);
   --grey-950: hsl(220, 13%, 13%);
-  --shadow-orange-300: 0px 20px 50px 0px rgba(255, 126, 27, 0.25);
-  --shadow-grey-950: 0px 20px 50px 0px rgba(220, 13%, 13%, 0.1);
+  --shadow-orange-300: 0px 20px 50px 0px hsla(26, 100%, 55%, 0.25);
+  --shadow-grey-950: 0px 20px 50px 0px hsla(220, 13%, 13%, 0.1);
 }
 
 body {

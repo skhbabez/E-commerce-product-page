@@ -1,4 +1,4 @@
-import { useContext, useId } from "react";
+import { useContext, useId, useRef } from "react";
 import { UserCtx } from "../../context/userContext";
 import Cart from "../../components/cart";
 import styles from "./Header.module.css";
@@ -40,7 +40,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <div className={styles.popover} popover="auto" id={id}>
+      <div popover="auto" id={id} className={styles.popover}>
         <Cart cart={cart} onDelete={removeItem}></Cart>
       </div>
     </>
