@@ -5,6 +5,7 @@ import ThumbnailNavigation from "./thumbnailNavigation";
 import Close from "../icons/Close";
 import LeftArrow from "../icons/LeftArrow";
 import RightArrow from "../icons/ArrowRight";
+import ArrowButton from "./arrowButton";
 
 interface PictureGalleryProps {
   images: Image[];
@@ -39,16 +40,22 @@ const PictureGallery = ({ images }: PictureGalleryProps) => {
       <div className={styles.embeddedgallery}>
         <div className={styles.currentimage}>
           <div className={styles.navigation}>
-            <button
+            <ArrowButton
+              variant="left"
               type="button"
               aria-label="previous image"
               onClick={onPrevClick}
             >
               <LeftArrow />
-            </button>
-            <button type="button" aria-label="next image" onClick={onNextClick}>
+            </ArrowButton>
+            <ArrowButton
+              variant="right"
+              type="button"
+              aria-label="next image"
+              onClick={onNextClick}
+            >
               <RightArrow />
-            </button>
+            </ArrowButton>
           </div>
 
           {/* how to make this meaningufully accessible? */}
@@ -80,20 +87,22 @@ const PictureGallery = ({ images }: PictureGalleryProps) => {
           </button>
           <div className={styles.currentimage}>
             <div className={styles.navigation}>
-              <button
+              <ArrowButton
+                variant="left"
                 type="button"
                 aria-label="previous image"
                 onClick={onPrevClick}
               >
                 <LeftArrow />
-              </button>
-              <button
+              </ArrowButton>
+              <ArrowButton
+                variant="right"
                 type="button"
                 aria-label="next image"
                 onClick={onNextClick}
               >
                 <RightArrow />
-              </button>
+              </ArrowButton>
             </div>
             <img src={currentImage.image} alt={currentImage.alt}></img>
           </div>
