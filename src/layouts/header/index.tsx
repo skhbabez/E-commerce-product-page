@@ -1,15 +1,17 @@
-import { useContext, useId, useRef } from "react";
+import { useContext, useId } from "react";
 import { UserCtx } from "../../context/userContext";
 import Cart from "../../components/cart";
 import styles from "./Header.module.css";
 import CartLabel from "../../components/cartLabel";
 import { CartCtx } from "../../context/cartContext";
+import { Link, useLocation } from "@tanstack/react-router";
 
-// Use A router for next project
 const Header = () => {
   const { user } = useContext(UserCtx);
   const { cart, removeItem } = useContext(CartCtx);
   const id = useId();
+  const location = useLocation();
+  const currentPath = location.pathname;
   const amount = cart.reduce((acc, cur) => acc + cur.quantity, 0);
   return (
     <>
@@ -21,10 +23,18 @@ const Header = () => {
             </a>
             <div className={styles.mainnavigation}>
               <a href="#">Collections</a>
-              <a href="#">Men</a>
-              <a className={styles.selected} href="#">
+              <Link
+                to="/men"
+                className={currentPath === "/men" ? styles.selected : ""}
+              >
+                Men
+              </Link>
+              <Link
+                className={currentPath === "/women" ? styles.selected : ""}
+                to="/women"
+              >
                 Women
-              </a>
+              </Link>
               <a href="#">About</a>
               <a href="#">Contact</a>
             </div>
