@@ -12,6 +12,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@tanstack/react-router": "^1.131.35",
+    "@tanstack/react-router-devtools": "^1.131.35",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
@@ -23,6 +25,8 @@
     "@storybook/addon-onboarding": "^9.1.4",
     "@storybook/addon-vitest": "^9.1.4",
     "@storybook/react-vite": "^9.1.4",
+    "@tanstack/router-cli": "^1.131.35",
+    "@tanstack/router-plugin": "^1.131.35",
     "@types/node": "^24.3.1",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
