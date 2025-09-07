@@ -14,20 +14,24 @@
     inline-size: 100%;
     block-size: 100%;
     object-fit: cover;
+    transition: opacity 150ms ease-out;
   }
   & label {
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
+    background-color: var(--white);
   }
   & label:not(:has(input:checked)):hover {
-    opacity: 50%;
+    img {
+      opacity: 50%;
+    }
   }
 
   & label:has(input:checked) {
     position: relative;
     outline: 3px solid var(--orange-500);
-    background-color: var(--white);
+
     & img {
       opacity: 25%;
     }

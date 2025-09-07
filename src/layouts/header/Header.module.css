@@ -19,6 +19,8 @@
 .shopbutton {
   border: none;
   background-color: transparent;
+  color: var(--grey-500);
+  transition: color 150ms ease-out;
   & svg {
     transition: color 150ms ease-out;
   }
@@ -40,10 +42,10 @@
     justify-content: space-between;
   }
   @media (min-width: 608px) {
-    block-size: 5.1875rem;
     border-block-end: 1px solid var(--grey-100);
     padding-block-start: 0;
     padding-inline: 0;
+    padding-block-end: 33px;
   }
 }
 
@@ -60,7 +62,7 @@
 
 .menunavigation {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 1rem;
 
   button {
@@ -92,6 +94,9 @@
     font-size: 0.9375rem;
     gap: 2rem;
 
+    & a {
+      transition: color 150ms ease-out;
+    }
     & a.selected,
     a:hover {
       display: block;
@@ -101,7 +106,7 @@
       &::after {
         content: "";
         position: absolute;
-        bottom: -47px;
+        bottom: -46px;
         background-color: var(--orange-500);
         height: 4px;
         width: 100%;
@@ -156,6 +161,8 @@
     font-size: 1.125rem;
     line-height: 1.625rem;
     font-weight: bold;
+    transition: color 150ms ease-out;
+
     &:hover {
       color: var(--orange-500);
     }
@@ -165,6 +172,7 @@
     background-color: transparent;
     border: none;
     color: var(--grey-500);
+    transition: color 150ms ease-out;
     :hover {
       color: var(--orange-500);
     }
