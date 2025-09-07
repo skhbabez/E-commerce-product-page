@@ -26,10 +26,15 @@ fieldset {
   border: none;
 }
 
+dialog {
+  max-width: initial;
+  max-height: initial;
+}
 @font-face {
   font-family: "Kumbh Sans";
   font-style: normal;
-  src: local("Kumbh Sans"),
+  src:
+    local("Kumbh Sans"),
     url("fonts/KumbhSans-VariableFont_YOPQ,wght.ttf") format("truetype");
 }
 
@@ -77,6 +82,9 @@ h1 {
       padding-inline: 44.5px;
     }
   }
+}
+button {
+  cursor: pointer;
 }
 
 .sr-only {

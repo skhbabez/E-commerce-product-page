@@ -1,4 +1,4 @@
-import Trash from "../icons/Trash";
+import Trash from "../../icons/Trash";
 import styles from "./CartItem.module.css";
 
 interface CartItemProps {

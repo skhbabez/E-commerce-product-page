@@ -1,7 +1,7 @@
 import Button from "../button";
 import styles from "./Cart.module.css";
 
-import CartItem from "../CartItem";
+import CartItem from "./CartItem";
 import type { CartItem as Item } from "../../types";
 import type { ComponentProps } from "react";
 

@@ -3,19 +3,15 @@ import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 
 import Header from "../layouts/header";
 
-
-
-
 const RootLayout = () => (
   <>
     <div className="appwrapper">
       <Header />
       <main>
         <Outlet />
-  
       </main>
     </div>
-    <TanStackRouterDevtools />
+    {/* <TanStackRouterDevtools /> */}
   </>
 );
 

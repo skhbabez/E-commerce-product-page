@@ -1,26 +1,40 @@
-import { useContext, useId } from "react";
+import { useContext, useId, useRef } from "react";
 import { UserCtx } from "../../context/userContext";
 import Cart from "../../components/cart";
 import styles from "./Header.module.css";
 import CartLabel from "../../components/cartLabel";
 import { CartCtx } from "../../context/cartContext";
 import { Link, useLocation } from "@tanstack/react-router";
+import Menu from "../../components/icons/menu";
+import Close from "../../components/icons/Close";
 
 const Header = () => {
   const { user } = useContext(UserCtx);
   const { cart, removeItem } = useContext(CartCtx);
+  const dialogRef = useRef<HTMLDialogElement | null>(null);
   const id = useId();
   const location = useLocation();
   const currentPath = location.pathname;
   const amount = cart.reduce((acc, cur) => acc + cur.quantity, 0);
+
   return (
     <>
       <header className={styles.header}>
         <div className={styles.headercontent}>
-          <div className={styles.navigation}>
-            <a href="#" className={styles.logo}>
-              <img src="images\logo.svg" alt="Home"></img>
-            </a>
+          <nav className={styles.navigation}>
+            <div className={styles.menunavigation}>
+              <button
+                type="button"
+                aria-haspopup="dialog"
+                aria-label="show navigation"
+                onClick={() => dialogRef.current?.showModal()}
+              >
+                <Menu />
+              </button>
+              <a href="#" className={styles.logo}>
+                <img src="images\logo.svg" alt="Home"></img>
+              </a>
+            </div>
             <div className={styles.mainnavigation}>
               <a href="#">Collections</a>
               <Link
@@ -38,7 +52,7 @@ const Header = () => {
               <a href="#">About</a>
               <a href="#">Contact</a>
             </div>
-          </div>
+          </nav>
 
           <div className={styles.usersection}>
             <button className={styles.shopbutton} popoverTarget={id}>
@@ -53,6 +67,22 @@ const Header = () => {
       <div popover="auto" id={id} className={styles.popover}>
         <Cart cart={cart} onDelete={removeItem}></Cart>
       </div>
+      <dialog ref={dialogRef} className={styles.navigationdialog}>
+        <nav>
+          <button
+            type="button"
+            aria-label="close dialog"
+            onClick={() => dialogRef.current?.close()}
+          >
+            <Close />
+          </button>
+          <a href="#">Collections</a>
+          <Link to="/men">Men</Link>
+          <Link to="/women">Women</Link>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+      </dialog>
     </>
   );
 };

@@ -2,13 +2,17 @@
   background-color: transparent;
   border: none;
   position: fixed;
-  left: 63.26%;
   top: 94px;
+  translate: -50% 0;
+  left: 50%;
+  @media (min-width: 768px) {
+    left: min(1091px, 100vw - 180px);
+  }
   box-shadow: var(--shadow-grey-950);
   @supports (bottom: anchor(bottom)) {
-    top: anchor(bottom);
-    left: anchor(center);
-    translate: -50% 0;
+    @media (min-width: 768px) {
+      left: min(anchor(center), 100vw - 180px);
+    }
   }
 }
 
@@ -23,33 +27,69 @@
   }
 }
 .header {
-  border-block-end: 1px solid var(--grey-100);
-  block-size: 83px;
   inline-size: 100%;
   overflow: hidden;
   position: relative;
   z-index: 1;
+  padding-inline: 1.484375rem;
   & .headercontent {
+    padding-block-start: 1.1875rem;
     inline-size: 100%;
     display: flex;
     align-items: center;
-
     justify-content: space-between;
+  }
+  @media (min-width: 608px) {
+    block-size: 5.1875rem;
+    border-block-end: 1px solid var(--grey-100);
+    padding-block-start: 0;
+    padding-inline: 0;
   }
 }
 
 .usersection {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  button {
+    display: inline-block;
+  }
+
   gap: clamp(1.5rem, 0.0687rem + 6.1069vw, 3rem);
 }
 
+.menunavigation {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  button {
+    @media (min-width: 1024px) {
+      display: none;
+    }
+    & svg {
+      block-size: 16px;
+      inline-size: 15px;
+      &:hover {
+        color: var(--grey-950);
+      }
+    }
+    background-color: transparent;
+    border: none;
+    color: var(--grey-500);
+  }
+}
 .navigation {
   display: flex;
   align-items: center;
   gap: 3.5rem;
+
   & .mainnavigation {
-    font-size: 0.9375rem;
     display: flex;
+    @media (max-width: 1024px) {
+      display: none;
+    }
+    font-size: 0.9375rem;
     gap: 2rem;
 
     & a.selected,
@@ -93,4 +133,48 @@
 .logo {
   inline-size: 8.59375rem;
   block-size: 1.25rem;
+}
+
+.navigationdialog {
+  @media (min-width: 1024px) {
+    display: none;
+  }
+  border: none;
+  min-inline-size: 250px;
+  block-size: 100dvh;
+  padding-inline-start: clamp(1.5rem, -1.8397rem + 14.2494vw, 5rem);
+  padding-block-start: clamp(1.5rem, 0.0687rem + 6.1069vw, 3rem);
+  inline-size: 39.19%;
+  max-inline-size: 301px;
+  & nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: start;
+  }
+  & nav a {
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+    font-weight: bold;
+    &:hover {
+      color: var(--orange-500);
+    }
+  }
+  & button {
+    margin-block-end: 2rem;
+    background-color: transparent;
+    border: none;
+    color: var(--grey-500);
+    :hover {
+      color: var(--orange-500);
+    }
+    & svg {
+      block-size: 0.84rem;
+      inline-size: 0.84rem;
+    }
+  }
+  &::backdrop {
+    background-color: var(--black);
+    opacity: 75%;
+  }
 }

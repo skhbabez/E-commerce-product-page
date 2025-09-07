@@ -1,15 +1,18 @@
 .currentimage {
   position: relative;
 
-  & > img {
+  & > button > img {
     object-fit: cover;
+    object-position: center;
     inline-size: 100%;
-    block-size: 100%;
+    aspect-ratio: 448/445;
+    block-size: var(--image-height, 100%);
   }
   & > button {
     display: block;
     background-color: transparent;
     border: none;
+    inline-size: 100%;
   }
 }
 
@@ -27,19 +30,20 @@
     margin-block-start: 2rem;
   }
   @media (min-width: 1024px) {
-    max-inline-size: 448px;
+    max-inline-size: 28rem;
   }
   inline-size: 100%;
 }
 
 .embeddedgallery .currentimage {
-  block-size: 300px;
+  --image-height: 18.75rem;
+  block-size: var(--image-height);
   overflow: hidden;
   @media (min-width: 608px) {
     border-radius: 0.9375rem;
   }
   @media (min-width: 1024px) {
-    block-size: 445px;
+    --image-height: 27.8125rem;
   }
 }
 
@@ -53,7 +57,7 @@
 .lightboxgallery .currentimage {
   inline-size: 550px;
   margin-block-start: 1.5rem;
-  margin-block-end: 40px;
+  margin-block-end: 2.5rem;
   & img {
     border-radius: 0.9375rem;
   }
@@ -69,7 +73,7 @@
 }
 
 .lightboxgallery .thumbnailwrapper {
-  padding-inline: 51px;
+  padding-inline: 3.1875rem;
 }
 
 .lightboxdialog {
@@ -96,7 +100,7 @@
     color: var(--orange-500);
   }
   & svg {
-    block-size: 20px;
-    inline-size: 20px;
+    block-size: 1.25rem;
+    inline-size: 1.25rem;
   }
 }
