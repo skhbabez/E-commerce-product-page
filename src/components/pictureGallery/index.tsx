@@ -29,7 +29,7 @@ const PictureGallery = ({ images }: PictureGalleryProps) => {
   };
 
   const onPrevClick = () => {
-    currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+    setCurrentIndex(currentIndex > 0 ? currentIndex - 1 : images.length - 1);
   };
   const onNextClick = () => {
     setCurrentIndex((currentIndex + 1) % images.length);
