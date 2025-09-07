@@ -3,7 +3,7 @@ import ProductPage from "../layouts/productPage";
 import type { Product } from "../types";
 
 export const Route = createFileRoute("/women")({
-  component: AboutComponent,
+  component: ProductComponent,
 });
 const product: Product = {
   id: 1,
@@ -40,6 +40,6 @@ const product: Product = {
     },
   ],
 };
-function AboutComponent() {
+function ProductComponent() {
   return <ProductPage product={product}></ProductPage>;
 }
