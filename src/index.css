@@ -35,7 +35,7 @@ dialog {
   font-style: normal;
   src:
     local("Kumbh Sans"),
-    url("fonts/KumbhSans-VariableFont_YOPQ,wght.ttf") format("truetype");
+    url("/fonts/KumbhSans-VariableFont_YOPQ,wght.ttf") format("truetype");
 }
 
 :root {
