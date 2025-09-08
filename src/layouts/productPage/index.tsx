@@ -1,4 +1,4 @@
-import { useContext, useId, useState } from "react";
+import { useContext, useState } from "react";
 import Button from "../../components/button";
 import ShoppingCart from "../../components/icons/ShoppingCart";
 import PriceLabel from "../../components/priceLabel";

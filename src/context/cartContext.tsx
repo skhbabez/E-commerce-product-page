@@ -48,7 +48,7 @@ const CartCtxProvider = ({
     });
   }, []);
 
-  // Maybe useExternalSyncstore? Would avoid another context? and make it esier to synchronize across tabs
+  // Maybe useExternalSyncstore? Would avoid another context? and make it esier to synchronize across tabs?
 
   const addItem = (cartItem: CartItem) => {
     setCart((oldCart) => {
