@@ -12,7 +12,7 @@ import type { User } from "../types";
 
 const userDefault = {
   id: 1,
-  avatar: "public/images/image-avatar.png",
+  avatar: "images/image-avatar.png",
 };
 
 interface UserCtxType {
