@@ -70,8 +70,8 @@
       display: none;
     }
     & svg {
-      block-size: 16px;
-      inline-size: 15px;
+      block-size: 1rem;
+      inline-size: 0.9375rem;
       &:hover {
         color: var(--grey-950);
       }
@@ -106,9 +106,9 @@
       &::after {
         content: "";
         position: absolute;
-        bottom: -46px;
+        bottom: -2.875rem;
         background-color: var(--orange-500);
-        height: 4px;
+        height: 0.25rem;
         width: 100%;
         display: block;
       }
@@ -145,12 +145,12 @@
     display: none;
   }
   border: none;
-  min-inline-size: 250px;
+  min-inline-size: 15.625rem;
   block-size: 100dvh;
   padding-inline-start: clamp(1.5rem, -1.8397rem + 14.2494vw, 5rem);
   padding-block-start: clamp(1.5rem, 0.0687rem + 6.1069vw, 3rem);
   inline-size: 39.19%;
-  max-inline-size: 301px;
+  max-inline-size: 18.8125rem;
   & nav {
     display: flex;
     flex-direction: column;

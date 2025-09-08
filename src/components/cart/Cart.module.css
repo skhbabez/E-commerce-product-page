@@ -7,7 +7,7 @@
   gap: 1.5rem;
   box-shadow: var(--shadow-grey-950);
   min-block-size: 16rem;
-  border-radius: 10px;
+  border-radius: 0.625rem;
 
   &::before {
     content: "";
