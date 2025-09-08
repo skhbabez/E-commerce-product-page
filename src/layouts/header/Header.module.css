@@ -2,16 +2,16 @@
   background-color: transparent;
   border: none;
   position: fixed;
-  top: 94px;
+  top: 5.875rem;
   translate: -50% 0;
   left: 50%;
   @media (min-width: 768px) {
-    left: min(991px + (100vw - 1110px) / 2, 100vw - 180px);
+    left: min(61.9375rem + (100vw - 69.375rem) / 2, 100vw - 11.25rem);
   }
   box-shadow: var(--shadow-grey-950);
   @supports (bottom: anchor(bottom)) {
     @media (min-width: 768px) {
-      left: min(anchor(center), 100vw - 180px);
+      left: min(anchor(center), 100vw - 11.25rem);
     }
   }
 }
