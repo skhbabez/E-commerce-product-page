@@ -43,7 +43,7 @@ const product: Product = {
 function App() {
   return (
     <UserCtxProvider>
-      <CartCtxProvider initialValue={[]}>
+      <CartCtxProvider>
         <div className="appwrapper">
           <Header />
           <main>

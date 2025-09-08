@@ -1,5 +1,6 @@
 import {
   createContext,
+  useEffect,
   useMemo,
   useState,
   type PropsWithChildren,
@@ -21,12 +22,33 @@ const CartCtx = createContext<CartCtxType>({
 });
 
 const CartCtxProvider = ({
-  initialValue,
   children,
-}: PropsWithChildren<{ initialValue: CartItem[] }>) => {
-  const [cart, setCart] = useState<CartItem[]>(initialValue);
+  initialValue,
+}: PropsWithChildren<{ initialValue?: CartItem[] }>) => {
+  const getCart = () => {
+    const cartString = window.localStorage.getItem("cart");
+    return cartString ? JSON.parse(cartString) : undefined;
+  };
+  const saveCart = (cart: CartItem[]) => {
+    const cartString = JSON.stringify(cart);
+    window.localStorage.setItem("cart", cartString);
+    console.log(cartString);
+    return cart;
+  };
+  const [cart, setCart] = useState<CartItem[]>([]);
 
-  //add localstorage. Maybe external syncstore?
+  useEffect(() => {
+    setCart(() => {
+      const oldValue = getCart();
+      if (!oldValue) {
+        saveCart(initialValue || []);
+        return initialValue;
+      }
+      return oldValue;
+    });
+  }, []);
+
+  // Maybe useExternalSyncstore? Would avoid another context? and make it esier to synchronize across tabs
 
   const addItem = (cartItem: CartItem) => {
     setCart((oldCart) => {
@@ -42,12 +64,17 @@ const CartCtxProvider = ({
       } else {
         newCart.push(newCartItem);
       }
+      saveCart(newCart);
       return newCart;
     });
   };
 
   const removeItem = (id: number) => {
-    setCart((oldCart) => oldCart.filter((item) => id !== item.id));
+    setCart((oldCart) => {
+      const newCart = oldCart.filter((item) => id !== item.id);
+      saveCart(newCart);
+      return newCart;
+    });
   };
   const value = useMemo(
     () => ({

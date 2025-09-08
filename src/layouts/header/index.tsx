@@ -15,7 +15,6 @@ const Header = () => {
   const id = useId();
   const location = useLocation();
   const currentPath = location.pathname;
-  console.log(currentPath);
   const amount = cart.reduce((acc, cur) => acc + cur.quantity, 0);
 
   return (
