@@ -41,5 +41,5 @@ const product: Product = {
   ],
 };
 function ProductComponent() {
-  return <ProductPage product={product}></ProductPage>;
+  return <ProductPage product={product} ></ProductPage>;
 }

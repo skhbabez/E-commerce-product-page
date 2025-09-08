@@ -14,7 +14,8 @@ const Header = () => {
   const dialogRef = useRef<HTMLDialogElement | null>(null);
   const id = useId();
   const location = useLocation();
-  const currentPath = location.pathname;
+  const currentPath = location.pathname?.split("/").slice(-1)[0];
+  console.log(currentPath);
   const amount = cart.reduce((acc, cur) => acc + cur.quantity, 0);
   const onPurchase = () => {
     window.alert("Purchase Successful");
@@ -42,12 +43,12 @@ const Header = () => {
               <a href="#">Collections</a>
               <Link
                 to="/men"
-                className={currentPath === "/men" ? styles.selected : ""}
+                className={currentPath === "men" ? styles.selected : ""}
               >
                 Men
               </Link>
               <Link
-                className={currentPath === "/women" ? styles.selected : ""}
+                className={currentPath === "women" ? styles.selected : ""}
                 to="/women"
               >
                 Women
