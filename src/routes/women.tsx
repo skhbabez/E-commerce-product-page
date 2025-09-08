@@ -1,9 +1,10 @@
-import { CartCtxProvider } from "./context/cartContext";
-import { UserCtxProvider } from "./context/userContext";
-import Header from "./layouts/header";
-import ProductPage from "./layouts/productPage";
-import type { Product } from "./types";
+import { createFileRoute } from "@tanstack/react-router";
+import ProductPage from "../layouts/productPage";
+import type { Product } from "../types";
 
+export const Route = createFileRoute("/women")({
+  component: ProductComponent,
+});
 const product: Product = {
   id: 1,
   name: "Fall Limited Edition Sneakers",
@@ -39,20 +40,6 @@ const product: Product = {
     },
   ],
 };
-
-function App() {
-  return (
-    <UserCtxProvider>
-      <CartCtxProvider>
-        <div className="appwrapper">
-          <Header />
-          <main>
-            <ProductPage product={product}></ProductPage>
-          </main>
-        </div>
-      </CartCtxProvider>
-    </UserCtxProvider>
-  );
+function ProductComponent() {
+  return <ProductPage product={product}></ProductPage>;
 }
-
-export default App;

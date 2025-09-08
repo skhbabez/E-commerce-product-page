@@ -1,0 +1,39 @@
+.thumbnailnavigation {
+  display: none;
+  @media (min-width: 1024px) {
+    display: grid;
+  }
+  grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
+  gap: 2rem;
+
+  & input[type="radio"] {
+    appearance: none;
+    position: absolute;
+  }
+  & img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    transition: opacity 150ms ease-out;
+  }
+  & label {
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: var(--white);
+  }
+  & label:not(:has(input:checked)):hover {
+    img {
+      opacity: 50%;
+    }
+  }
+
+  & label:has(input:checked) {
+    position: relative;
+    outline: 3px solid var(--orange-500);
+
+    & img {
+      opacity: 25%;
+    }
+  }
+}

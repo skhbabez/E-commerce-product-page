@@ -1,68 +1,99 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+img,
+svg {
+  max-inline-size: 100%;
+  display: block;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+ul,
+ol {
+  list-style: none;
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  text-decoration: none;
+  color: inherit;
 }
-a:hover {
-  color: #535bf2;
+
+fieldset {
+  border: none;
+}
+
+dialog {
+  max-width: initial;
+  max-height: initial;
+}
+@font-face {
+  font-family: "Kumbh Sans";
+  font-style: normal;
+  src:
+    local("Kumbh Sans"),
+    url("fonts/KumbhSans-VariableFont_YOPQ,wght.ttf") format("truetype");
+}
+
+:root {
+  --font-base: "Kumbh Sans", "sans-serif";
+  --orange-500: hsl(26, 100%, 55%);
+  --orange-300: hsl(26, 100%, 71%);
+  --white: hsl(0, 100%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --grey-50: hsl(223, 64%, 98%);
+  --grey-100: hsl(219, 35%, 92%);
+  --grey-300: hsl(221, 22%, 81%);
+  --grey-500: hsl(219, 9%, 45%);
+  --grey-950: hsl(220, 13%, 13%);
+  --shadow-orange-300: 0px 20px 50px 0px hsla(26, 100%, 55%, 0.25);
+  --shadow-grey-950: 0px 20px 50px 0px hsla(220, 13%, 13%, 0.1);
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: var(--font-base);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.625;
+  color: var(--grey-500);
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-weight: bold;
+  font-size: clamp(1.75rem, 0.7958rem + 4.0712vw, 2.75rem);
+  line-height: clamp(2rem, 1.0458rem + 4.0712vw, 3rem);
+  color: var(--grey-950);
 }
 
+.appwrapper {
+  margin: auto;
+  max-inline-size: 608px;
+  @media (min-width: 1024px) {
+    max-inline-size: 1110px;
+  }
+  & > main {
+    margin-block-start: clamp(1.5rem, 0.0687rem + 6.1069vw, 3rem);
+    @media (min-width: 1024px) {
+      margin-block-start: 96px;
+      padding-inline: 44.5px;
+    }
+  }
+}
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
