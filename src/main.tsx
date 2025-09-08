@@ -5,7 +5,10 @@ import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 import { UserCtxProvider } from "./context/userContext";
 import { CartCtxProvider } from "./context/cartContext";
-const router = createRouter({ routeTree });
+const router = createRouter({
+  routeTree,
+  basepath: "/E-commerce-product-page/",
+});
 declare module "@tanstack/react-router" {
   interface Register {
     router: typeof router;
