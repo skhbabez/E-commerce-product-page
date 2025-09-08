@@ -117,6 +117,7 @@
 }
 
 .avatarlink {
+  flex-shrink: 0;
   &:has(:hover, :focus-visible, :focus) img {
     outline: 0.125rem solid var(--orange-500);
     outline-offset: -0.125rem;
