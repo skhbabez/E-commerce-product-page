@@ -21,6 +21,7 @@ export default defineConfig({
     }),
     react(),
   ],
+  base: "/E-commerce-product-page/",
   test: {
     projects: [
       {
