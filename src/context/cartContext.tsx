@@ -11,6 +11,7 @@ interface CartCtxType {
   cart: CartItem[];
   addItem: (cartItem: CartItem) => void;
   removeItem: (id: number) => void;
+  emptyCart: () => void;
 }
 
 const defaultCart: CartItem[] = [];
@@ -19,6 +20,7 @@ const CartCtx = createContext<CartCtxType>({
   cart: defaultCart,
   addItem: () => {},
   removeItem: () => {},
+  emptyCart: () => {},
 });
 
 const CartCtxProvider = ({
@@ -41,8 +43,7 @@ const CartCtxProvider = ({
     setCart(() => {
       const oldValue = getCart();
       if (!oldValue) {
-        saveCart(initialValue || []);
-        return initialValue;
+        return saveCart(initialValue || []);
       }
       return oldValue;
     });
@@ -76,11 +77,18 @@ const CartCtxProvider = ({
       return newCart;
     });
   };
+
+  const emptyCart = () => {
+    setCart(() => {
+      return saveCart([]);
+    });
+  };
   const value = useMemo(
     () => ({
       cart,
       addItem,
       removeItem,
+      emptyCart,
     }),
     [cart, setCart]
   );

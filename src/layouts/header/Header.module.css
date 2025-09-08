@@ -6,7 +6,7 @@
   translate: -50% 0;
   left: 50%;
   @media (min-width: 768px) {
-    left: min(1091px, 100vw - 180px);
+    left: min(991px + (100vw - 1110px) / 2, 100vw - 180px);
   }
   box-shadow: var(--shadow-grey-950);
   @supports (bottom: anchor(bottom)) {

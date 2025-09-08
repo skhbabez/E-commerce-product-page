@@ -10,13 +10,16 @@ import Close from "../../components/icons/Close";
 
 const Header = () => {
   const { user } = useContext(UserCtx);
-  const { cart, removeItem } = useContext(CartCtx);
+  const { cart, removeItem, emptyCart } = useContext(CartCtx);
   const dialogRef = useRef<HTMLDialogElement | null>(null);
   const id = useId();
   const location = useLocation();
   const currentPath = location.pathname;
   const amount = cart.reduce((acc, cur) => acc + cur.quantity, 0);
-
+  const onPurchase = () => {
+    window.alert("Purchase Successful");
+    emptyCart();
+  };
   return (
     <>
       <header className={styles.header}>
@@ -63,10 +66,14 @@ const Header = () => {
             </a>
           </div>
         </div>
+        <div popover="auto" id={id} className={styles.popover}>
+          <Cart
+            cart={cart}
+            onDelete={removeItem}
+            onPurchase={onPurchase}
+          ></Cart>
+        </div>
       </header>
-      <div popover="auto" id={id} className={styles.popover}>
-        <Cart cart={cart} onDelete={removeItem}></Cart>
-      </div>
       <dialog ref={dialogRef} className={styles.navigationdialog}>
         <nav>
           <button

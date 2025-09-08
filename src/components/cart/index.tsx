@@ -8,9 +8,16 @@ import type { ComponentProps } from "react";
 interface CartProps extends ComponentProps<"div"> {
   cart: Item[];
   onDelete: (id: number) => void;
+  onPurchase: () => void;
 }
 
-const Cart = ({ cart, onDelete, className, ...props }: CartProps) => {
+const Cart = ({
+  cart,
+  onDelete,
+  onPurchase,
+  className,
+  ...props
+}: CartProps) => {
   return (
     <div className={`${styles.cart} ${className}`} {...props}>
       <h2>Cart</h2>
@@ -23,7 +30,7 @@ const Cart = ({ cart, onDelete, className, ...props }: CartProps) => {
               </li>
             ))}
           </ul>
-          <Button>Checkout</Button>
+          <Button onClick={onPurchase}>Checkout</Button>
         </>
       ) : (
         <p className={styles.emptymessage}>Your cart is empty.</p>
