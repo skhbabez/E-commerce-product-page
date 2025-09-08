@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import Cart from ".";
 
-
 const meta = {
   component: Cart,
 } satisfies Meta<typeof Cart>;
@@ -15,6 +14,7 @@ export const Empty: Story = {
   args: {
     cart: [],
     onDelete: () => {},
+    onPurchase: () => {},
   },
 };
 export const One: Story = {
@@ -29,6 +29,7 @@ export const One: Story = {
       },
     ],
     onDelete: () => {},
+    onPurchase: () => {},
   },
 };
 export const Two: Story = {
@@ -50,5 +51,6 @@ export const Two: Story = {
       },
     ],
     onDelete: () => {},
+    onPurchase: () => {},
   },
 };
