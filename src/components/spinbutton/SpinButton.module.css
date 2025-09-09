@@ -27,6 +27,11 @@
   & button {
     border: none;
     background-color: inherit;
+    &:disabled {
+      & svg {
+        color: var(--grey-300);
+      }
+    }
   }
   & svg {
     inline-size: 0.75rem;

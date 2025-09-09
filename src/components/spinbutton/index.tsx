@@ -43,6 +43,7 @@ const SpinButton = ({ value, min, max, label, onClick }: SpinButtonProps) => {
   return (
     <div className={styles.spinbutton} tabIndex={-1} onFocus={focusHandler}>
       <button
+        disabled={value <= min}
         tabIndex={-1}
         type="button"
         aria-controls={id}
@@ -68,6 +69,7 @@ const SpinButton = ({ value, min, max, label, onClick }: SpinButtonProps) => {
         {normalizeValue(value)}
       </output>
       <button
+        disabled={value >= max}
         tabIndex={-1}
         type="button"
         aria-controls={id}
