@@ -39,23 +39,33 @@ const Header = () => {
                 <img src="images\logo.svg" alt="Home"></img>
               </a>
             </div>
-            <div className={styles.mainnavigation}>
-              <a href="#">Collections</a>
-              <Link
-                to="/men"
-                className={currentPath === "men" ? styles.selected : ""}
-              >
-                Men
-              </Link>
-              <Link
-                className={currentPath === "women" ? styles.selected : ""}
-                to="/women"
-              >
-                Women
-              </Link>
-              <a href="#">About</a>
-              <a href="#">Contact</a>
-            </div>
+            <ul className={styles.mainnavigation}>
+              <li>
+                <a href="#">Collections</a>
+              </li>
+              <li>
+                <Link
+                  to="/men"
+                  className={currentPath === "men" ? styles.selected : ""}
+                >
+                  Men
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={currentPath === "women" ? styles.selected : ""}
+                  to="/women"
+                >
+                  Women
+                </Link>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+            </ul>
           </nav>
 
           <div className={styles.usersection}>
@@ -84,11 +94,23 @@ const Header = () => {
           >
             <Close />
           </button>
-          <a href="#">Collections</a>
-          <Link to="/men">Men</Link>
-          <Link to="/women">Women</Link>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
+          <ul>
+            <li>
+              <a href="#">Collections</a>
+            </li>
+            <li>
+              <Link to="/men">Men</Link>
+            </li>
+            <li>
+              <Link to="/women">Women</Link>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
         </nav>
       </dialog>
     </>
