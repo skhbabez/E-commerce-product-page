@@ -71,15 +71,15 @@ h1 {
 
 .appwrapper {
   margin: auto;
-  max-inline-size: 608px;
-  @media (min-width: 1024px) {
-    max-inline-size: 1110px;
+  max-inline-size: 38rem;
+  @media (min-width: 64rem) {
+    max-inline-size: 69.375rem;
   }
   & > main {
     margin-block-start: clamp(1.5rem, 0.0687rem + 6.1069vw, 3rem);
-    @media (min-width: 1024px) {
-      margin-block-start: 96px;
-      padding-inline: 44.5px;
+    @media (min-width: 64rem) {
+      margin-block-start: 6rem;
+      padding-inline: 2.78125rem;
     }
   }
 }
