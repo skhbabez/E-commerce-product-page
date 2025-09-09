@@ -9,8 +9,12 @@ interface ArrowButtonProps extends ComponentProps<"button"> {
 
 const ArrowButton = ({ variant, className, ...props }: ArrowButtonProps) => {
   return (
-    <button className={`${styles.button} ${className}`} {...props}>
-      {variant === "left" ? <LeftArrow /> : <RightArrow />}{" "}
+    <button
+      className={`${styles.button} ${className}`}
+      aria-label={variant === "left" ? "previous image" : "next image"}
+      {...props}
+    >
+      {variant === "left" ? <LeftArrow /> : <RightArrow />}
     </button>
   );
 };

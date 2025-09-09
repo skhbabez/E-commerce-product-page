@@ -19,7 +19,7 @@ const Cart = ({
   ...props
 }: CartProps) => {
   return (
-    <div className={`${styles.cart} ${className}`} {...props}>
+    <article className={`${styles.cart} ${className}`} {...props}>
       <h2>Cart</h2>
       {cart.length > 0 ? (
         <>
@@ -35,7 +35,7 @@ const Cart = ({
       ) : (
         <p className={styles.emptymessage}>Your cart is empty.</p>
       )}
-    </div>
+    </article>
   );
 };
 export default Cart;
