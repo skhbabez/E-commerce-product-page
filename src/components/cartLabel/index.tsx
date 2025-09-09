@@ -8,7 +8,7 @@ interface CartLabelProps {
 const CartLabel = ({ items }: CartLabelProps) => {
   return (
     <div className={styles.label}>
-      {!!items && <output>{items}</output>}
+      {!!items && <output aria-label="items in cart">{items}</output>}
       <ShoppingCart />
     </div>
   );

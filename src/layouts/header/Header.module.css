@@ -5,12 +5,12 @@
   top: 5.875rem;
   translate: -50% 0;
   left: 50%;
-  @media (min-width: 768px) {
+  @media (min-width: 48em) {
     left: min(61.9375rem + (100vw - 69.375rem) / 2, 100vw - 11.25rem);
   }
   box-shadow: var(--shadow-grey-950);
   @supports (bottom: anchor(bottom)) {
-    @media (min-width: 768px) {
+    @media (min-width: 48em) {
       left: min(anchor(center), 100vw - 11.25rem);
     }
   }
@@ -41,11 +41,11 @@
     align-items: center;
     justify-content: space-between;
   }
-  @media (min-width: 608px) {
-    border-block-end: 1px solid var(--grey-100);
+  @media (min-width: 38em) {
+    border-block-end: 0.0625rem solid var(--grey-100);
     padding-block-start: 0;
     padding-inline: 0;
-    padding-block-end: 33px;
+    padding-block-end: 2.0625rem;
   }
 }
 
@@ -66,7 +66,7 @@
   gap: 1rem;
 
   button {
-    @media (min-width: 1024px) {
+    @media (min-width: 64em) {
       display: none;
     }
     & svg {
@@ -88,7 +88,7 @@
 
   & .mainnavigation {
     display: flex;
-    @media (max-width: 1024px) {
+    @media (max-width: 64em) {
       display: none;
     }
     font-size: 0.9375rem;
@@ -98,7 +98,7 @@
       transition: color 150ms ease-out;
     }
     & a.selected,
-    a:hover {
+    a:is(:hover, :focus-visible) {
       display: block;
       position: relative;
       color: var(--grey-950);
@@ -130,7 +130,7 @@
       3.125rem
     ); /* maybe not control size directly but through parent?*/
 
-    @container (min-width: 375px) {
+    @container (min-width: 23.4375rem) {
       inline-size: clamp(1.5rem, -0.0506rem + 6.6158cqi, 3.125rem);
     }
   }
@@ -142,7 +142,7 @@
 }
 
 .navigationdialog {
-  @media (min-width: 1024px) {
+  @media (min-width: 64em) {
     display: none;
   }
   border: none;
@@ -152,6 +152,19 @@
   padding-block-start: clamp(1.5rem, 0.0687rem + 6.1069vw, 3rem);
   inline-size: 39.19%;
   max-inline-size: 18.8125rem;
+  & button {
+    background-color: transparent;
+    border: none;
+    color: var(--grey-500);
+    transition: color 150ms ease-out;
+    &:is(:hover, :focus-visible) {
+      color: var(--orange-500);
+    }
+    & svg {
+      block-size: 0.84rem;
+      inline-size: 0.84rem;
+    }
+  }
   & nav ul {
     margin-block-start: 3.5rem;
     display: flex;
@@ -165,23 +178,11 @@
     font-weight: bold;
     transition: color 150ms ease-out;
 
-    &:hover {
+    &:is(:hover, :focus-visible) {
       color: var(--orange-500);
     }
   }
-  & button {
-    background-color: transparent;
-    border: none;
-    color: var(--grey-500);
-    transition: color 150ms ease-out;
-    :hover {
-      color: var(--orange-500);
-    }
-    & svg {
-      block-size: 0.84rem;
-      inline-size: 0.84rem;
-    }
-  }
+
   &::backdrop {
     background-color: var(--black);
     opacity: 75%;

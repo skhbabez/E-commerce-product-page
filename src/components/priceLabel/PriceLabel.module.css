@@ -5,7 +5,7 @@
   font-weight: bold;
   place-items: start;
 
-  @media (min-width: 768px) {
+  @media (min-width: 48em) {
     grid-template-columns: auto auto;
     column-gap: 1.5rem;
     row-gap: 0.5rem;
@@ -28,7 +28,7 @@
 
 .price {
   justify-self: end;
-  @media (min-width: 768px) {
+  @media (min-width: 48em) {
     justify-self: start;
   }
 }

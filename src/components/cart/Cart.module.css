@@ -1,7 +1,7 @@
 .cart {
   padding-block: 1.5rem;
   background-color: var(--white);
-  inline-size: 360px;
+  inline-size: 22.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -13,10 +13,10 @@
     content: "";
     display: block;
     order: 1;
-    border-top: 1px solid var(--grey-100);
+    border-top: 0.0625rem solid var(--grey-100);
   }
   & > h2 {
-    margin-inline: 12px;
+    margin-inline: 0.75rem;
     font-weight: bold;
     color: var(--grey-950);
   }
@@ -26,7 +26,7 @@
     flex-direction: column;
   }
   & > :is(ul, button) {
-    margin-inline: 25.5px;
+    margin-inline: 1.59375rem;
     order: 2;
   }
   & .emptymessage {

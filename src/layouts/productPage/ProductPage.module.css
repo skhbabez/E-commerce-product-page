@@ -1,13 +1,13 @@
 .productpage {
   & form {
     margin-block-start: clamp(1.5rem, 0.0687rem + 6.1069vw, 3rem);
-    @media (min-width: 1024px) {
+    @media (min-width: 64em) {
       margin-block-start: 0;
-      max-inline-size: 445px;
+      max-inline-size: 27.8125rem;
     }
     inline-size: 100%;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 64em) {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -19,7 +19,7 @@
     text-transform: uppercase;
     /*375-768*/
     font-size: clamp(0.75rem, 0.6904rem + 0.2545vw, 0.8125rem);
-    line-height: auto;
+    line-height: normal;
     letter-spacing: clamp(0.1156rem, 0.1067rem + 0.0382vw, 0.125rem);
     font-weight: bold;
   }
@@ -38,7 +38,7 @@
 
 .pricelabel {
   margin-block-start: 2rem;
-  @media (min-width: 768px) {
+  @media (min-width: 48em) {
     margin-block-start: clamp(1.5rem, 0rem + 3.125vw, 2rem); /* 768 - 1024*/
   }
 }
@@ -47,13 +47,13 @@
   display: grid;
   gap: 1rem;
   margin-block-start: 2rem;
-  @media (min-width: 768px) {
+  @media (min-width: 48em) {
     margin-block-start: 1.5rem;
     gap: 0.5rem;
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 64em) {
     margin-block-start: 2rem;
     gap: 1rem;
     grid-template-columns: 37.08% 62.92%;

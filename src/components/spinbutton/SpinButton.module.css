@@ -8,11 +8,11 @@
   min-width: 9.8125rem;
   border-radius: 0.625rem;
 
-  @media (min-width: 768px) {
+  @media (min-width: 48em) {
     padding-inline: 1.5rem;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 64em) {
     padding-inline: calc(0.5rem + 0.34375rem);
   }
 
@@ -21,7 +21,7 @@
     user-select: none;
   }
   &:focus-within {
-    outline: 1px solid var(--orange-300);
+    outline: 0.0625rem solid var(--orange-300);
   }
 
   & button {

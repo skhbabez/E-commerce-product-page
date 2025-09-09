@@ -19,7 +19,7 @@
     block-size: 1rem;
   }
 
-  &:hover {
+  &:is(:hover, :focus-visible) {
     background-color: var(--orange-300);
   }
 }

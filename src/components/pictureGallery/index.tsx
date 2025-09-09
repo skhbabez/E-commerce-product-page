@@ -28,6 +28,22 @@ const PictureGallery = ({ images }: PictureGalleryProps) => {
     }
   };
 
+  const closeLightBoxOutside = (event: React.MouseEvent<HTMLDialogElement>) => {
+    const dialog = dialogRef.current;
+
+    if (dialog && !(event.target instanceof HTMLButtonElement)) {
+      const rect = dialog.getBoundingClientRect();
+      const isInDialog =
+        rect.top <= event.clientY &&
+        event.clientY <= rect.top + rect.height &&
+        rect.left <= event.clientX &&
+        event.clientX <= rect.left + rect.width;
+      if (!isInDialog) {
+        dialog.close();
+      }
+    }
+  };
+
   const onPrevClick = () => {
     setCurrentIndex(currentIndex > 0 ? currentIndex - 1 : images.length - 1);
   };
@@ -64,6 +80,7 @@ const PictureGallery = ({ images }: PictureGalleryProps) => {
             onClick={showLightbox}
             aria-label="open lightbox gallery"
             aria-haspopup="dialog"
+            tabIndex={-1}
           >
             <img src={currentImage.image} alt={currentImage.alt} />
           </button>
@@ -76,7 +93,11 @@ const PictureGallery = ({ images }: PictureGalleryProps) => {
         />
       </div>
 
-      <dialog className={styles.lightboxdialog} ref={dialogRef}>
+      <dialog
+        onClick={closeLightBoxOutside}
+        className={styles.lightboxdialog}
+        ref={dialogRef}
+      >
         <div className={styles.lightboxgallery}>
           <button
             className={styles.closebutton}

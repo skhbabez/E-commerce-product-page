@@ -21,11 +21,29 @@ const Header = () => {
     window.alert("Purchase Successful");
     emptyCart();
   };
+  // https://stackoverflow.com/questions/25864259/how-to-close-the-new-html-dialog-tag-by-clicking-on-its-backdrop
+  const closeNavigationMenuOutside = (
+    event: React.MouseEvent<HTMLDialogElement>
+  ) => {
+    const dialog = dialogRef.current;
+
+    if (dialog) {
+      const rect = dialog.getBoundingClientRect();
+      const isInDialog =
+        rect.top <= event.clientY &&
+        event.clientY <= rect.top + rect.height &&
+        rect.left <= event.clientX &&
+        event.clientX <= rect.left + rect.width;
+      if (!isInDialog) {
+        dialog.close();
+      }
+    }
+  };
   return (
     <>
       <header className={styles.header}>
         <div className={styles.headercontent}>
-          <nav className={styles.navigation}>
+          <nav className={styles.navigation} aria-label="main navigation">
             <div className={styles.menunavigation}>
               <button
                 type="button"
@@ -69,7 +87,13 @@ const Header = () => {
           </nav>
 
           <div className={styles.usersection}>
-            <button className={styles.shopbutton} popoverTarget={id}>
+            <button
+              type="button"
+              className={styles.shopbutton}
+              aria-haspopup="menu"
+              aria-label="Open Cart"
+              popoverTarget={id}
+            >
               <CartLabel items={amount} />
             </button>
             <a className={styles.avatarlink} href="#">
@@ -85,8 +109,12 @@ const Header = () => {
           ></Cart>
         </div>
       </header>
-      <dialog ref={dialogRef} className={styles.navigationdialog}>
-        <nav>
+      <dialog
+        ref={dialogRef}
+        onClick={closeNavigationMenuOutside}
+        className={styles.navigationdialog}
+      >
+        <nav aria-label="open navigation menu">
           <button
             type="button"
             aria-label="close dialog"
@@ -96,7 +124,9 @@ const Header = () => {
           </button>
           <ul>
             <li>
-              <a href="#">Collections</a>
+              <a autoFocus href="#">
+                Collections
+              </a>
             </li>
             <li>
               <Link to="/men">Men</Link>

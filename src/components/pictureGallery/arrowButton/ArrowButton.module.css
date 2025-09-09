@@ -14,7 +14,7 @@
     block-size: 28.57%;
   }
 
-  &:hover svg {
+  &:is(:hover, :focus-visible) svg {
     color: red;
   }
 }

@@ -12,7 +12,7 @@ const PriceLabel = ({
   className,
   ...props
 }: PriceLabelProps) => {
-  const discountedPrice = (price * discount).toFixed(2);
+  const discountedPrice = (price * (1 - discount)).toFixed(2);
   return (
     <div className={`${styles.wrapper} ${className}`} {...props}>
       <p className={styles.discountedprice}>

@@ -8,32 +8,32 @@ export const Route = createFileRoute("/men")({
 const product: Product = {
   id: 2,
   name: "Fall Limited Edition Boots",
-  brand: "Sneaker Company",
+  brand: "Boots Company",
   description:
     "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
-  price: 250,
-  discount: 0.5,
+  price: 125,
+  discount: 0.75,
   images: [
     {
-      id: 1,
-      image: "images/image-product-1.jpg",
-      thumbnail: "images/image-product-1-thumbnail.jpg",
-      alt: "Product picture",
-    },
-    {
-      id: 2,
+      id: 5,
       image: "images/image-product-2.jpg",
       thumbnail: "images/image-product-2-thumbnail.jpg",
       alt: "Product picture",
     },
     {
-      id: 3,
+      id: 6,
+      image: "images/image-product-1.jpg",
+      thumbnail: "images/image-product-1-thumbnail.jpg",
+      alt: "Product picture",
+    },
+    {
+      id: 7,
       image: "images/image-product-3.jpg",
       thumbnail: "images/image-product-3-thumbnail.jpg",
       alt: "Product picture",
     },
     {
-      id: 4,
+      id: 8,
       image: "images/image-product-4.jpg",
       thumbnail: "images/image-product-4-thumbnail.jpg",
       alt: "Product picture",

@@ -20,7 +20,7 @@ const ProductPage = ({ product }: ProductPageProps) => {
       id: product.id,
       name: product.name,
       quantity: quantity,
-      price: product.price,
+      price: product.price * (1 - product.discount),
       image: product.images[0]?.thumbnail,
     });
   };
