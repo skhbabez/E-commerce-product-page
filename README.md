@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/skhbabez/E-commerce-product-page](https://github.com/skhbabez/E-commerce-product-page)
+- Live Site URL: [https://skhbabez.github.io/E-commerce-product-page](https://skhbabez.github.io/E-commerce-product-page)
 
 ## My process
 
@@ -219,4 +219,3 @@ I’m not completely happy with the overall structure. I kind of forced CSS modu
 - [Popover Api](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using) - Great Article on the Popover API from MDN.
 - [Spinbutton Accessibility](https://bootstrap-vue.org/docs/components/form-spinbutton/) - I used this implementation of a Spinbuttoon as a Reference to figure out, how to make it accessible.
 - [Github actions with vite](https://vite.dev/guide/static-deploy.html#github-pages) - I used the script provided here to deploy to github pages with github actions.
-

@@ -46,7 +46,7 @@
   }
   @media (min-width: 64em) {
     --image-height: 27.8125rem;
-    pointer-events: auto;
+    pointer-events: all;
     cursor: inherit;
   }
 }

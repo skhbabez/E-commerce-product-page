@@ -8,6 +8,7 @@
   aspect-ratio: 1;
   min-block-size: 2.5rem;
   min-inline-size: 2.5rem;
+  pointer-events: all;
 
   & svg {
     color: var(--grey-950);
