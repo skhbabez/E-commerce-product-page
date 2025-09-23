@@ -21,7 +21,7 @@ export default defineConfig({
     }),
     react(),
   ],
-  base: "/bmi-calculator/",
+  base: "/E-commerce-product-page/",
   test: {
     projects: [
       {
